@@ -18,7 +18,7 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col"><strong>Price:</strong></div>
-                            <div class="col">₹{{ $product->price }}</div>
+                            <div class="col">${{ $product->price }}</div>
                         </div>   
                     </div>
                 </div>
@@ -26,10 +26,12 @@
                     <h3 class="card-header">Credit card payment</h3> 
                     <div class="panel-body">
                         @if (Session::has('success'))
-                            <div class="alert alert-success text-center">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                <p>{{ Session::get('success') }}</p>
+                        <div class="bs-component">
+                            <div class="alert alert-dismissible alert-success">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                {{ Session::get('success') }}
                             </div>
+                        </div>                            
                         @endif
                         <form 
                                     role="form" 
@@ -56,18 +58,18 @@
                                         <label class='col-form-label'>Card Number</label> 
                                     </div>
                                     <div class="col-sm-6">
-                                        <input autocomplete='off' class='form-control card-number' size='20' type='number' placeholder="ex.465832581167">
+                                        <input class='form-control card-number' size='16' type='number' placeholder="ex.465832581167">
                                     </div>
                                 </div>
                             </div>
                             <div class='row'>
                                 <div class='col-sm-2 cvc required'>
                                     <label class='col-form-label'>CVC</label>                                     
-                                    <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' type='number'>
+                                    <input class='form-control card-cvc' placeholder='ex. 311' type='number'>
                                 </div>
                                 <div class='col-sm-2 expiration required'>
                                     <label class='col-form-label'>Expiration Month</label> 
-                                    <input class='form-control card-expiry-month' placeholder='MM' size='2' type='number'>
+                                    <input class='form-control card-expiry-month' placeholder='MM' maxlength='2' type='number'>
                                 </div>
                                 <div class='col-sm-2 expiration required'>
                                     <label class='col-form-label'>Expiration Year</label> 
@@ -81,7 +83,7 @@
                             </div>
                             <div class="row mt-3 mb-3">
                                 <div class="col-12">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ₹ {{$product->price}}</button>
+                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ${{$product->price}}</button>
                                 </div>
                             </div>
                         </form>
@@ -149,6 +151,8 @@ $(function() {
             var token = response['id'];   
             $form.find('input[type=text]').empty();
             $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+            $form.append("<input type='hidden' name='price' value='{{ $product->price }}'/>");
+            $form.append("<input type='hidden' name='name' value='{{ $product->name }}'/>");
             $form.get(0).submit();
         }
     }  
