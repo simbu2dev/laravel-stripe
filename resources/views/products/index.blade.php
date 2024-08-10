@@ -26,49 +26,7 @@
                     $new_order]);
                 }
 
-<<<<<<< HEAD
             @endphp  
-=======
-                                @endphp                                
-                                <th>
-                                    <a href="{{ $field_url['name'] }}">Product Name
-                                        <i class="fa-solid fa-sort-{{ $fa_direction }}"></i>
-                                    </a>
-                                </th>
-                                <th>
-                                    <a href="{{ $field_url['price'] }}">Price ($)
-                                        <i class="fa-solid fa-sort-{{ $fa_direction }}"></i>
-                                    </a>
-                                </th>                                
-                                <th>
-                                    Action
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($products as $product)
-                            <tr>
-                                <td> {{ $product->name }} </td>
-                                <td> {{ $product->price }} </td>
-                                <td>
-                                    <a href="/products/{{ $product->slug }}" class="text-decoration-none">
-                                        <button type="button" class="btn btn-link">
-                                            <i class="fa-regular fa-pen-to-square"></i> Buy now
-                                        </button>
-                                    </a>                                    
-                                </td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="6" class="text-center">No products found for <b>{{ request('search') }}</b>.</td>
-                            </tr>
-                            @endforelse
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
->>>>>>> b191f74e9aa80a411f34a2fed2d6f3595393a817
             <div class="row">
                 <div class="col-lg-12 my-3">
                     <div class="pull-right">
