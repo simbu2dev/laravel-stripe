@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -17,7 +18,7 @@ class ProductController extends Controller
         return view('products.index', [
             'products' => Product::filter(request(['search']))
                 ->sort(request(['field', 'order']))
-                ->paginate(10)
+                ->paginate(6)
                 ->withQueryString(),
         ]);
     }
