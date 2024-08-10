@@ -37,7 +37,7 @@
                                     </a>
                                 </th>
                                 <th>
-                                    <a href="{{ $field_url['price'] }}">Price (₹)
+                                    <a href="{{ $field_url['price'] }}">Price ($)
                                         <i class="fa-solid fa-sort-{{ $fa_direction }}"></i>
                                     </a>
                                 </th>                                
