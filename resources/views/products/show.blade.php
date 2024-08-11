@@ -83,7 +83,7 @@
                             </div>
                             <div class="row mt-3 mb-3">
                                 <div class="col-12">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ${{$product->price}}</button>
+                                    <button class="btn btn-primary btn-lg btn-block pay-btn" type="submit">Pay Now ${{$product->price}}</button>
                                 </div>
                             </div>
                         </form>
