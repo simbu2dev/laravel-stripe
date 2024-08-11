@@ -1,5 +1,7 @@
 <p align="center">
+
 ![alt text](https://github.com/simbu2dev/laravel-stripe/blob/master/public/images/logo.png?raw=true)
+
 </p>
 
 ## screenshots
