@@ -1,4 +1,4 @@
-<p align="center">![alt text](https://github.com/simbu2dev/laravel-stripe/blob/master/public/images/logo.png?raw=true)</p>
+<p align="center">![alt text](https://github.com/simbu2dev/laravel-stripe/master/public/images/logo.png?raw=true)</p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
